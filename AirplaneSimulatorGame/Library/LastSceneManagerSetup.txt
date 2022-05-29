@@ -1,6 +1,5 @@
 sceneSetups:
-- path: C:/Users/user/Desktop/Aircraft-Physics-master/Assets/Aircraft Physics/Example/Scenes/Cessna
-    172.unity
+- path: Assets/Scenes/AirPlane.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
