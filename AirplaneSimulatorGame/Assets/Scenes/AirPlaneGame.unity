@@ -993,9 +993,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8646e848328db234f850b3ea9c6e557e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Yaw: 0
-  yawSpeed: 3
   plane: {fileID: 1383539500878797304}
+  Yaw: 0
+  yawSpeed: 5
 --- !u!1 &1383539500878797304
 GameObject:
   m_ObjectHideFlags: 0
@@ -1467,9 +1467,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a5c5e32bf8eb7048bf7160214bc50e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  joystick: {fileID: 884967876}
   Pitch: 0
   Roll: 0
-  joystick: {fileID: 884967876}
   speed: 50
   maxSpeed: 0
   minSpeed: 0
