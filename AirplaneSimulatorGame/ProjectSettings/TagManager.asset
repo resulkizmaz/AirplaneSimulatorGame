@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - road
+  - terrain
+  - checkPoint
+  - endPoint
+  - outOfRoad
+  - PlayerGFX
   layers:
   - Default
   - TransparentFX

@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class yawHoldButtonEvent : MonoBehaviour 
 {
+    #region Parameters
     [SerializeField]
     GameObject plane;
 
@@ -17,10 +18,10 @@ public class yawHoldButtonEvent : MonoBehaviour
     bool isHold;
     bool rightYaw = false;
     bool leftYaw = false;
-
+    #endregion
     private void Update()
     {
-        #region INPUT
+        #region Input
         if (isHold && Yaw<maxYaw&&rightYaw)
         {
             Yaw += Time.deltaTime * yawSpeed;
@@ -31,21 +32,21 @@ public class yawHoldButtonEvent : MonoBehaviour
         }
         #endregion
 
-        #region MOVING
+        #region Moving
         if (Yaw > 0.1f) // Klavyede E
         {
             plane.transform.Rotate(-Vector3.down * yawSpeed * Yaw * 0.1f * Time.deltaTime);
-            Debug.Log("SAÐA DÖNME");
+            //Debug.Log("SAÐA DÖNME");
         }
 
         if (Yaw < -0.1f) // Klavyede Q
         {
             plane.transform.Rotate(-Vector3.up * yawSpeed * -Yaw * 0.1f * Time.deltaTime);
-            Debug.Log("SOLA DÖNME");
+            //Debug.Log("SOLA DÖNME");
         }
         #endregion
     }
-    #region BUTTONS
+    #region ButtonControl
     public void HoldButton()
     {
         isHold = true;
