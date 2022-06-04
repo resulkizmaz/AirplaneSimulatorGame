@@ -6,9 +6,15 @@ using UnityEngine.Playables;
 public class timelineController : MonoBehaviour
 {
     public PlayableDirector playableDirector;
+    public GameObject engineEffect;
 
+    private void Start()
+    {
+        engineEffect.SetActive(false);
+    }
     public void play()
     {
         playableDirector.Play();
+        engineEffect.SetActive(true);
     }
 }

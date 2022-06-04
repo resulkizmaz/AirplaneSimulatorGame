@@ -13,10 +13,10 @@ public class checkPoint : MonoBehaviour
     #endregion
 
     #region Caching
-    colliderController _colliderController;
+    UIController uiController;
     private void Start()
     {
-        _colliderController = Object.FindObjectOfType<colliderController>();
+        uiController = Object.FindObjectOfType<UIController>();
     }
     #endregion
 
@@ -25,23 +25,14 @@ public class checkPoint : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            _colliderController.cPoint += 1;
-            checkPointText.text = "Check Point : " + _colliderController.cPoint.ToString();
+            uiController.cPoint += 1;
+            checkPointText.text = "Check Point : " + uiController.cPoint.ToString();
 
-            _colliderController.score += 10;
-            scoreText.text = "Score : " + _colliderController.score.ToString();
-        }
-    }
-    #endregion
+            uiController.score += 10;
+            scoreText.text = "Score : " + uiController.score.ToString();
 
-    #region Trigger Exit
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
             Destroy(gameObject);
         }
     }
     #endregion
-
 }
