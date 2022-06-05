@@ -36,16 +36,15 @@ public class UIController : MonoBehaviour
     {
         _movement = Object.FindObjectOfType<movement>();
         boomEffect.SetActive(false);
+        worningText.gameObject.SetActive(false);
         Time.timeScale = 1f;
     }
     #endregion
 
-    #region Update
     void Update()
     {
         Timer();
     }
-    #endregion
 
 
     #region Collider Control
@@ -70,6 +69,7 @@ public class UIController : MonoBehaviour
             if (targetTime > 0)
             {
                 // audioWarning.Play();
+                worningText.gameObject.SetActive(true);
                 worningText.text = "Go Back To Road! " + second.ToString();
             }
             else if (targetTime <= 0)
@@ -84,7 +84,7 @@ public class UIController : MonoBehaviour
         if (other.CompareTag("outOfRoad"))
         {
             // audioWarning.Stop();
-            worningText.text = "";
+            worningText.gameObject.SetActive(false);
         }
     }
 
@@ -94,7 +94,7 @@ public class UIController : MonoBehaviour
         _movement.speed = 0;
         boomEffect.SetActive(true);
 
-        yield return new WaitForSeconds(1.7f);
+        yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(1);
         
     }

@@ -9,7 +9,6 @@ public class movement : MonoBehaviour
     #region Objects
     [SerializeField]
     Joystick joystick;
-
     #endregion
     #region Parameters
 
@@ -28,29 +27,17 @@ public class movement : MonoBehaviour
 
     private void Update()
     {
-        #region Moving
-
-        transform.position += transform.forward * speed * Time.deltaTime;
-
-
-        if (Input.GetKey(KeyCode.W)) // Joystick kontrolü için düzenle
-        {
-            if (speed<maxSpeed)
-            {
-                speed++;
-            }
-        }
-        if (Input.GetKey(KeyCode.S)) // Joystick kontrolü için düzenle
-        {
-            if (speed > minSpeed)
-            {
-                speed--;
-            }
-        }
-        
+        #region Input
 
         Pitch = joystick.Vertical;
         Roll = joystick.Horizontal;
+
+        #endregion
+
+
+        #region Moving
+
+        transform.position += transform.forward * speed * Time.deltaTime;
 
 
         if (Pitch > 0) // Klavyede W
@@ -75,7 +62,8 @@ public class movement : MonoBehaviour
             transform.Rotate(Vector3.back * rollSpeed * Roll * Time.deltaTime);
             Debug.Log("SAÐA YATMA");
         }
+
         #endregion
-        
+
     }
 }

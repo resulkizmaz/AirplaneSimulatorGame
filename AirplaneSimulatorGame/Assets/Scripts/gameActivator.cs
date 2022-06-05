@@ -5,12 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class gameActivator : MonoBehaviour
 {
-   
+    #region Caching
     Scene _scene;
     private void Awake()
     {
-        _scene = SceneManager.GetActiveScene(); //caching.
+        _scene = SceneManager.GetActiveScene();
     }
+    #endregion
+
+    #region Describe
     private void Update()
     {
         if (this.gameObject)
@@ -18,8 +21,6 @@ public class gameActivator : MonoBehaviour
             SceneManager.LoadScene(_scene.buildIndex + 1);
            
         }
-
     }
-    
-    
+    #endregion
 }

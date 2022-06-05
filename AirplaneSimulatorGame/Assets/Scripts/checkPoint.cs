@@ -20,7 +20,7 @@ public class checkPoint : MonoBehaviour
     }
     #endregion
 
-    #region Trigger Enter
+    #region Collider
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))

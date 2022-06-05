@@ -18,7 +18,18 @@ public class yawHoldButtonEvent : MonoBehaviour
     bool isHold;
     bool rightYaw = false;
     bool leftYaw = false;
+    bool Decrease;
+    bool Increase;
     #endregion
+
+    #region Caching
+    movement _movement;
+    private void Start()
+    {
+        _movement= Object.FindObjectOfType<movement>();
+    }
+    #endregion
+
     private void Update()
     {
         #region Input
@@ -29,6 +40,15 @@ public class yawHoldButtonEvent : MonoBehaviour
         if (isHold && Yaw>minYaw && leftYaw)
         {
             Yaw -= Time.deltaTime * yawSpeed;
+        }
+
+        if (isHold && _movement.speed < _movement.maxSpeed && Increase)
+        {
+            _movement.speed += Time.deltaTime*10;
+        }
+        if (isHold && _movement.speed > _movement.minSpeed && Decrease)
+        {
+            _movement.speed -= Time.deltaTime*10;
         }
         #endregion
 
@@ -55,6 +75,7 @@ public class yawHoldButtonEvent : MonoBehaviour
     {
         isHold = false;
         Yaw = 0;
+        //_movement.speed = 125f;
 
     }
     public void yawRight()
@@ -66,6 +87,16 @@ public class yawHoldButtonEvent : MonoBehaviour
     {
         leftYaw = true;
         rightYaw = false;
+    }
+    public void speedIncrease()
+    {
+        Increase = true;
+        Decrease = false;
+    }
+    public void speedDecrease()
+    {
+        Decrease = true;
+        Increase = false;
     }
     #endregion
 

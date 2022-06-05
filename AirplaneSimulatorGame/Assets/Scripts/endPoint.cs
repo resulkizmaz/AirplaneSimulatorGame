@@ -6,6 +6,7 @@ using TMPro;
 
 public class endPoint : MonoBehaviour
 {
+    #region Pannel Controller
     [SerializeField]
     GameObject endPannel;
     
@@ -24,6 +25,9 @@ public class endPoint : MonoBehaviour
 
         }
     }
+    #endregion
+
+    #region Button Functions
     public void playAgain()
     {
         SceneManager.LoadScene(1);
@@ -32,4 +36,5 @@ public class endPoint : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+    #endregion
 }
