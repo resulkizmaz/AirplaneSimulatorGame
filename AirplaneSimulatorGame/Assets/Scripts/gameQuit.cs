@@ -6,6 +6,6 @@ public class gameQuit : MonoBehaviour
     public void quitGame()
     {
         Application.Quit();
-        Debug.Log("KAPANDI");
+        //Debug.Log("KAPANDI");
     }
 }

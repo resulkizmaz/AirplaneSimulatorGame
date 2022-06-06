@@ -12,8 +12,6 @@ public class UIController : MonoBehaviour
     [SerializeField]
     GameObject player;
     [SerializeField]
-    GameObject endPannel;
-    [SerializeField]
     TextMeshProUGUI worningText;
     [SerializeField]
     TextMeshProUGUI timerText;
@@ -26,6 +24,7 @@ public class UIController : MonoBehaviour
     float timePassed;
     float targetTime;
     int second;
+    int clock;
     public int cPoint;
     public int score;
     #endregion
@@ -68,7 +67,6 @@ public class UIController : MonoBehaviour
         {
             if (targetTime > 0)
             {
-                // audioWarning.Play();
                 worningText.gameObject.SetActive(true);
                 worningText.text = "Go Back To Road! " + second.ToString();
             }
@@ -83,7 +81,6 @@ public class UIController : MonoBehaviour
 
         if (other.CompareTag("outOfRoad"))
         {
-            // audioWarning.Stop();
             worningText.gameObject.SetActive(false);
         }
     }
@@ -105,9 +102,10 @@ public class UIController : MonoBehaviour
     public void Timer()
     {
         timePassed += Time.deltaTime; // Oyunu oynadýðýmýz süre
-        timerText.text = timePassed.ToString();
+        clock = Mathf.RoundToInt(timePassed);
+        timerText.text = "Time : " + clock.ToString();
 
-        speedText.text = "Speed : "+ _movement.speed.ToString();
+        speedText.text = "Speed : " + (Mathf.RoundToInt(_movement.speed)).ToString();
 
         targetTime -= Time.deltaTime; // Rotaya geri dönmemiz gereken süre
         second = Mathf.RoundToInt(targetTime);

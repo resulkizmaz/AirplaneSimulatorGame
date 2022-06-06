@@ -43,24 +43,24 @@ public class movement : MonoBehaviour
         if (Pitch > 0) // Klavyede W
         {
             transform.Rotate(-Vector3.right * pitchSpeed * Pitch * Time.deltaTime);
-            Debug.Log("DÜÞÜÞ");
+            //Debug.Log("DÜÞÜÞ");
         }
         if (Pitch < 0) // Klavyede S
         {
             transform.Rotate(-Vector3.left * pitchSpeed * -Pitch * Time.deltaTime);
-            Debug.Log("KALKIÞ");
+            //Debug.Log("KALKIÞ");
         }
 
 
         if (Roll < 0)// Klavyede A
         {
             transform.Rotate(Vector3.forward * rollSpeed * -Roll * Time.deltaTime);
-            Debug.Log("SOLA YATMA");
+            //Debug.Log("SOLA YATMA");
         }
         if (Roll > 0) // Klavyede D
         {
             transform.Rotate(Vector3.back * rollSpeed * Roll * Time.deltaTime);
-            Debug.Log("SAÐA YATMA");
+            //Debug.Log("SAÐA YATMA");
         }
 
         #endregion

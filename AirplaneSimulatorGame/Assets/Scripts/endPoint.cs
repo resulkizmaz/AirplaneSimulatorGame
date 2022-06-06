@@ -9,8 +9,13 @@ public class endPoint : MonoBehaviour
     #region Pannel Controller
     [SerializeField]
     GameObject endPannel;
-    
+    [SerializeField]
+    GameObject leftSound;
+    [SerializeField]
+    GameObject rightSound;
+
     public TextMeshProUGUI youWinText;
+    public TextMeshProUGUI scoreText;
     private void Start()
     {
         endPannel.SetActive(false);
@@ -22,6 +27,8 @@ public class endPoint : MonoBehaviour
             endPannel.SetActive(true);
             youWinText.text = "You Win!";
             Time.timeScale = 0f;
+            leftSound.SetActive(false);
+            rightSound.SetActive(false);
 
         }
     }

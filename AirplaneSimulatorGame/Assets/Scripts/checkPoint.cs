@@ -10,6 +10,8 @@ public class checkPoint : MonoBehaviour
     TextMeshProUGUI scoreText;
     [SerializeField] 
     TextMeshProUGUI checkPointText;
+    [SerializeField]
+    GameObject endPannel;
     #endregion
 
     #region Caching
@@ -30,6 +32,10 @@ public class checkPoint : MonoBehaviour
 
             uiController.score += 10;
             scoreText.text = "Score : " + uiController.score.ToString();
+            if (uiController.cPoint==5)
+            {
+                endPannel.SetActive(true);
+            }
 
             Destroy(gameObject);
         }
