@@ -6,10 +6,12 @@
 
 
 Goal :
+
 • We are controlling an aircraft on the air and trying to reach final destination.
 
 
 Game Flow :
+
 • We’ll be driving a plane on the air .
 
 • We need to coincide some checkpoints on the way .
@@ -26,6 +28,7 @@ airport package, this is included in our package.
 
 
 o Some of the topics to be considered in case study are as follows:
+
 
 ▪ Smooth aircraft control and realistic movement in the air .
 
