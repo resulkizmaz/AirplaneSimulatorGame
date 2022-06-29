@@ -26,7 +26,7 @@ public class yawHoldButtonEvent : MonoBehaviour
     movement _movement;
     private void Start()
     {
-        _movement= Object.FindObjectOfType<movement>();
+        _movement = GetComponent<movement>();
     }
     #endregion
 
