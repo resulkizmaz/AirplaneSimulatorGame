@@ -6,7 +6,7 @@ using TMPro;
 
 public class UIController : MonoBehaviour
 {
-    #region Objects
+
     [SerializeField]
     GameObject boomEffect;
     [SerializeField]
@@ -18,18 +18,18 @@ public class UIController : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI speedText;
 
-    #endregion
 
-    #region Parameters
+
+
     float timePassed;
     float targetTime;
     int second;
     int clock;
     public int cPoint;
     public int score;
-    #endregion
 
-    #region Caching
+
+
     movement _movement;
     void Start()
     {
@@ -38,7 +38,7 @@ public class UIController : MonoBehaviour
         worningText.gameObject.SetActive(false);
         Time.timeScale = 1f;
     }
-    #endregion
+
 
     void Update()
     {
@@ -46,7 +46,7 @@ public class UIController : MonoBehaviour
     }
 
 
-    #region Collider Control
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -96,9 +96,9 @@ public class UIController : MonoBehaviour
         
     }
 
-    #endregion
 
-    #region Timer
+
+
     public void Timer()
     {
         timePassed += Time.deltaTime; // Oyunu oynadýðýmýz süre
@@ -111,5 +111,5 @@ public class UIController : MonoBehaviour
         second = Mathf.RoundToInt(targetTime);
     }
 
-    #endregion
+
 }

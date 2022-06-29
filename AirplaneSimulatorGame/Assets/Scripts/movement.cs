@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class movement : MonoBehaviour
 {
-    #region Objects
+
     [SerializeField]
     Joystick joystick;
-    #endregion
-    #region Parameters
+
+
 
     [Range(-1, 1)]
     public float Pitch;
@@ -23,19 +23,18 @@ public class movement : MonoBehaviour
     public float rollSpeed;
     public float pitchSpeed;
 
-    #endregion
+
 
     private void Update()
     {
-        #region Input
+
 
         Pitch = joystick.Vertical;
         Roll = joystick.Horizontal;
 
-        #endregion
 
 
-        #region Moving
+
 
         transform.position += transform.forward * speed * Time.deltaTime;
 
@@ -63,7 +62,6 @@ public class movement : MonoBehaviour
             //Debug.Log("SAÐA YATMA");
         }
 
-        #endregion
 
     }
 }

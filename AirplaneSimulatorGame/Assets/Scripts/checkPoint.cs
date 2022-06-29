@@ -5,24 +5,24 @@ using TMPro;
 
 public class checkPoint : MonoBehaviour
 {
-    #region Objects
+
     [SerializeField] 
     TextMeshProUGUI scoreText;
     [SerializeField] 
     TextMeshProUGUI checkPointText;
     [SerializeField]
     GameObject endPannel;
-    #endregion
 
-    #region Caching
+
+
     UIController uiController;
     private void Start()
     {
         uiController = Object.FindObjectOfType<UIController>();
     }
-    #endregion
 
-    #region Collider
+
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -40,5 +40,5 @@ public class checkPoint : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    #endregion
+
 }
